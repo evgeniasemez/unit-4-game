@@ -1,8 +1,20 @@
-.jumbotron{
-    padding: 0;
-    padding-top: 5px;
-    background-color: #fff9;
-}
+
 .background-color{
     background-color: #0080004d;
+}
+
+.small-text {
+    font-size: 0.85rem;
+}
+
+.medium-text {
+    font-size: 1rem;
+}
+
+.large-text {
+    font-size: 1.15rem;
+}
+
+.title-card {
+    padding: 2rem;
 }

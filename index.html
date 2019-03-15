@@ -24,12 +24,12 @@
     <div class="container">
 
         <!-- Jumbotron with Title -->
-        <div class="jumbotron">
+        <div class="jumbotron title-card">
             <h1 class="text-center">
                 <strong>Crystals Collector!</strong>
             </h1>
             <hr>
-            <div id="rules-control" class="text-center">
+            <div id="rules-control" class="text-center small-text">
                 <p>You will be given a random number at the start of the game.</p>
                 <p>There are four crystals below. By clicking on the crystal you will add a specific amount of points
                     to your total score.</p>
@@ -42,7 +42,6 @@
         <div class="row">
             <div class="col-lg-6">
                 <div id="sizeControls" class="card">
-                    <!-- <h4 class="card-header">Random Number:</h4> -->
                     <h4>Random Number: <span id="number-to-guess"></span></h4>
                     <div class="card-body">
                         <div id="random-number">
@@ -53,34 +52,30 @@
             </div>
             <div class="col-lg-6">
                 <div id="sizeControls" class="card">
-                    <h4 class="card-header">Win:</h4>
-                    <div id="win-number">
+                    <h4>Wins: <span id="win-number"></span></h4>
 
-                    </div>
-                    <h4 class="card-header">Lose:</h4>
-                    <div id="lose-number">
-                    </div>
+                    <h4>Loses: <span id="lose-number"></span></h4>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-3">
-                <div class="image0">
+                <div id="jewel1">
                     <img src="assets/images/crystal-red-ball.jpg" width="100%">
                 </div>
             </div>
             <div class="col-lg-3">
-                <div class="image1">
+                <div id="jewel2">
                     <img src="assets/images/crystal-green-ball.jpg" width="100%">
                 </div>
             </div>
             <div class="col-lg-3">
-                <div class="image2">
+                <div id="jewel3">
                     <img src="assets/images/crystal-ellow-ball2.jpg" width="100%">
                 </div>
             </div>
             <div class="col-lg-3">
-                <div class="image3">
+                <div id="jewel4">
                     <img src="assets/images/crystal-blue-ball.jpg" width="100%">
                 </div>
             </div>
@@ -88,12 +83,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div id="sizeControls" class="card">
-                    <h4 class="card-header">Your total score is:</h4>
-                    <div class="card-body">
-                        <div id="total-score-number">
-
-                        </div>
-                    </div>
+                    <h4>Your total score is: <span id="total-score-number"></span></h4>
                 </div>
             </div>
         </div>
