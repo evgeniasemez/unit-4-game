@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    // declaring the variables 
     var total = 0;
     var totalWins = 0;
     var totalLosses = 0;
@@ -7,9 +8,11 @@ $(document).ready(function () {
     var jewel3Value = Math.floor(Math.random() * 10 + 1);
     var jewel4Value = Math.floor(Math.random() * 10 + 1);
 
+    // setting the main random number
     var targetValue = Math.floor(Math.random() * 15 + 25);
     $('span#number-to-guess').text(targetValue);
 
+    // creating a function to collect points 
     function collectPoints(value) {
         total += value;
         $('div.collected').text(total);
@@ -19,7 +22,7 @@ $(document).ready(function () {
         $('#lose-number').text(totalLosses);
     }
 
-
+    // setting collect points with images
     $('div.target').text(targetValue);
     $('div.collected').text("Start the game");
 
@@ -36,6 +39,7 @@ $(document).ready(function () {
         collectPoints(jewel4Value);
     });
 
+    //  setting a function to verify wins and loses
     function verifyWin() {
         if (total == targetValue) {
             totalWins += 1;
@@ -47,12 +51,14 @@ $(document).ready(function () {
         }
     }
 
+    // displaying wins and loses
     function displayWins() {
         var display = "Total Wins = " + totalWins + ". Total Losses = " + totalLosses + ".";
         $('div.winning').text(display);
         resetValues();
     }
 
+    // setting a reset function to reset a game once wins or loses determined 
     function resetValues() {
         total = 0;
         jewel1Value = Math.floor(Math.random() * 10 + 1);
