@@ -11,6 +11,8 @@ $(document).ready(function () {
     // setting the main random number
     var targetValue = Math.floor(Math.random() * 15 + 25);
     $('span#number-to-guess').text(targetValue);
+    resetValues();
+    console.log(jewel1Value, jewel2Value, jewel3Value, jewel4Value);
 
     // creating a function to collect points 
     function collectPoints(value) {
@@ -61,10 +63,17 @@ $(document).ready(function () {
     // setting a reset function to reset a game once wins or loses determined 
     function resetValues() {
         total = 0;
-        jewel1Value = Math.floor(Math.random() * 10 + 1);
-        jewel2Value = Math.floor(Math.random() * 10 + 1);
-        jewel3Value = Math.floor(Math.random() * 10 + 1);
-        jewel4Value = Math.floor(Math.random() * 10 + 1);
+        var allEven = true;
+        var allOdd = false;
+        while (allEven || allOdd) {
+            jewel1Value = Math.floor(Math.random() * 10 + 1);
+            jewel2Value = Math.floor(Math.random() * 10 + 1);
+            jewel3Value = Math.floor(Math.random() * 10 + 1);
+            jewel4Value = Math.floor(Math.random() * 10 + 1);
+            allEven = (jewel1Value % 2 === 0 && jewel2Value % 2 === 0 && jewel3Value % 2 === 0 && jewel4Value % 2 === 0);
+            allOdd = (jewel1Value % 2 === 1 && jewel2Value % 2 === 1 && jewel3Value % 2 === 1 && jewel4Value % 2 === 1);
+            console.log(allEven, allOdd);
+        }
 
         targetValue = Math.floor(Math.random() * 15 + 25);
         $('div.collected').text("Start the game");
