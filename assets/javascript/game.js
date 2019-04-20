@@ -8,10 +8,14 @@ $(document).ready(function () {
     var jewel3Value = Math.floor(Math.random() * 10 + 1);
     var jewel4Value = Math.floor(Math.random() * 10 + 1);
 
-    // setting the main random number
-    var targetValue = Math.floor(Math.random() * 15 + 25);
+    // setting the main random number by ensuring it is the product of the four jewel values.
+    var targetValue = Math.floor(Math.random() * 3 + 1) * jewel1Value;
+    targetValue += Math.floor(Math.random() * 3 + 1) * jewel2Value;
+    targetValue += Math.floor(Math.random() * 3 + 1) * jewel3Value;
+    targetValue += Math.floor(Math.random() * 3 + 1) * jewel4Value;
+
     $('span#number-to-guess').text(targetValue);
-    resetValues();
+    // resetValues();
     console.log(jewel1Value, jewel2Value, jewel3Value, jewel4Value);
 
     // creating a function to collect points 
@@ -57,28 +61,28 @@ $(document).ready(function () {
     function displayWins() {
         var display = "Total Wins = " + totalWins + ". Total Losses = " + totalLosses + ".";
         $('div.winning').text(display);
-        resetValues();
+        // resetValues();
     }
 
     // setting a reset function to reset a game once wins or loses determined 
-    function resetValues() {
-        total = 0;
-        var allEven = true;
-        var allOdd = false;
-        while (allEven || allOdd) {
-            jewel1Value = Math.floor(Math.random() * 10 + 1);
-            jewel2Value = Math.floor(Math.random() * 10 + 1);
-            jewel3Value = Math.floor(Math.random() * 10 + 1);
-            jewel4Value = Math.floor(Math.random() * 10 + 1);
-            allEven = (jewel1Value % 2 === 0 && jewel2Value % 2 === 0 && jewel3Value % 2 === 0 && jewel4Value % 2 === 0);
-            allOdd = (jewel1Value % 2 === 1 && jewel2Value % 2 === 1 && jewel3Value % 2 === 1 && jewel4Value % 2 === 1);
-            console.log(allEven, allOdd);
-        }
-
+    // function resetValues() {
+    //     total = 0;
+    //     var allEven = true;
+    //     var allOdd = false;
+    //     while (allEven || allOdd) {
+    //         jewel1Value = Math.floor(Math.random() * 10 + 1);
+    //         jewel2Value = Math.floor(Math.random() * 10 + 1);
+    //         jewel3Value = Math.floor(Math.random() * 10 + 1);
+    //         jewel4Value = Math.floor(Math.random() * 10 + 1);
+    //         allEven = (jewel1Value % 2 === 0 && jewel2Value % 2 === 0 && jewel3Value % 2 === 0 && jewel4Value % 2 === 0);
+    //         allOdd = (jewel1Value % 2 === 1 && jewel2Value % 2 === 1 && jewel3Value % 2 === 1 && jewel4Value % 2 === 1);
+    //         console.log(allEven, allOdd);
+    //     }
+        
         targetValue = Math.floor(Math.random() * 15 + 25);
         $('div.collected').text("Start the game");
         $('div.target').text(targetValue);
         $('#total-score-number').text(total);
         $('span#number-to-guess').text(targetValue);
-    }
+    
 });
